@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea } from "../../../../components/ui/scroll-area";
 import ServerItem from "./server-item";
 
 function ServerList({ children }: { children: ReactNode }) {

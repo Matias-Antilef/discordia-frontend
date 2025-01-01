@@ -1,12 +1,16 @@
 import { X } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../../../components/ui/avatar";
 import Link from "next/link";
-import { PublicRoutes } from "@/routes/routes";
+import { PrivateRoutes, PublicRoutes } from "@/routes/routes";
 
 function NavItem({ id }: { id: string }) {
   return (
     <Link
-      href={`/${PublicRoutes.CHAT}/${id}`}
+      href={`${PrivateRoutes.CHAT}/${id}`}
       className="flex hover:cursor-pointer items-center gap-2 bg-slate-600 group hover:bg-slate-500 rounded-lg p-1"
     >
       <Avatar className="h-12 w-12 relative overflow-visible">

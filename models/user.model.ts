@@ -1,12 +1,12 @@
 import { ServerModel } from "./server.model";
 
 export type UserModel = {
-  name: string;
+  username: string;
   email: string;
   servers: ServerModel[];
   friends: FriendModel[];
 };
 
 export type FriendModel = {
-  name: string;
+  username: string;
 };
