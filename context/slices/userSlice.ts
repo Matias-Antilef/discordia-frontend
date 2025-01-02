@@ -9,6 +9,7 @@ const initialState: userSlice = {
   user: {
     username: "",
     email: "",
+    status: "offline",
     friends: [],
     servers: [],
   },

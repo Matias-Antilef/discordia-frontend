@@ -25,9 +25,9 @@ function AuthForm({
   footerMsgLink: string;
 }) {
   return (
-    <Card className="w-[30vw]">
+    <Card className="w-[30vw] bg-accent">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-xl">{title}</CardTitle>
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>

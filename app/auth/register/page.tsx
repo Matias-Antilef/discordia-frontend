@@ -2,7 +2,7 @@
 
 import { TextField } from "@/components/ui/text-field";
 import { PublicRoutes } from "@/routes/routes";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { RegisterModel } from "./register.model";
 import AuthForm from "../components/auth-form";
@@ -32,25 +32,25 @@ function RegisterPage() {
     <>
       {showAlert && (
         <AlertCustom
-          title="Password does not match"
-          description="Please try again"
+          title="Contraseñas no coinciden"
+          description="Intente nuevamente"
         />
       )}
       <AuthForm
         onSubmit={handleSubmit(onSubmit)}
-        title="Register"
+        title="Registrarse"
         href={PublicRoutes.LOGIN}
-        footerMsg="Have an account? "
-        footerMsgLink="Login"
+        footerMsg="¿Ya tienes cuenta?"
+        footerMsgLink="Iniciar sesión"
       >
         <TextField
           {...register("username", {
             required: {
               value: true,
-              message: "Username is required",
+              message: "Nombre de usuario es requerido",
             },
           })}
-          label="username"
+          label="Nombre de usuario"
           type="username"
           error={errors.username?.message}
         />
@@ -59,10 +59,10 @@ function RegisterPage() {
           {...register("email", {
             required: {
               value: true,
-              message: "Email is required",
+              message: "Email es requerido",
             },
           })}
-          label="email"
+          label="Email"
           type="email"
           error={errors.email?.message}
         />
@@ -71,10 +71,10 @@ function RegisterPage() {
           {...register("password", {
             required: {
               value: true,
-              message: "Password is required",
+              message: "Contraseña es requerida",
             },
           })}
-          label="password"
+          label="Contraseña"
           type="password"
           error={errors.password?.message}
         />
@@ -83,10 +83,10 @@ function RegisterPage() {
           {...register("confirmPassword", {
             required: {
               value: true,
-              message: "Confirm password is required",
+              message: "Confirmar contraseña es requerida",
             },
           })}
-          label="confirm password"
+          label="Confirmar contraseña"
           type="password"
           error={errors.confirmPassword?.message}
         />

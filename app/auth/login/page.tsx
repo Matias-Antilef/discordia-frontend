@@ -25,20 +25,20 @@ function LoginPage() {
 
   return (
     <AuthForm
-      footerMsgLink="Register"
-      footerMsg="Don't have an account?"
+      footerMsg="¿No tienes cuenta?"
+      footerMsgLink="Registrate"
       href={PublicRoutes.REGISTER}
       onSubmit={handleSubmit(onSubmit)}
-      title="Login"
+      title="Iniciar sesión"
     >
       <TextField
         {...register("email", {
           required: {
             value: true,
-            message: "Email is required",
+            message: "Email es requerido",
           },
         })}
-        label="email"
+        label="Email"
         type="email"
         error={errors.email?.message}
       />
@@ -47,10 +47,10 @@ function LoginPage() {
         {...register("password", {
           required: {
             value: true,
-            message: "Password is required",
+            message: "Contraseña es requerida",
           },
         })}
-        label="password"
+        label="Contraseña"
         type="password"
         error={errors.password?.message}
       />

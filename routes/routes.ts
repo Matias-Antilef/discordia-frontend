@@ -6,4 +6,7 @@ export enum PublicRoutes {
 
 export enum PrivateRoutes {
   CHAT = "/core/chat",
+  ACCOUNT = "/account",
+  SETTINGS = "/account/settings",
+  NITRO = "/services/nitro",
 }

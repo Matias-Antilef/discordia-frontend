@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -10,6 +15,19 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+:root {
+  --bg: #16161a;
+  --headline: #fffffe;
+  --paragraph: #94a1b2;
+  --button: #7f5af0;
+  --buttontext: #fffffe;
+  --stroke: #010101;
+  --main: #fffffe;
+  --highlight: #7f5af0;
+  --second: #72757e;
+  --tertiary: #2cb67d;
 }
 
 @layer base {

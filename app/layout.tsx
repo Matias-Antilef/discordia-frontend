@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-900 flex  max-h-screen max-w-screen  overflow-hidden">
+      <body className=" bg-bg max-h-screen max-w-screen overflow-hidden">
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

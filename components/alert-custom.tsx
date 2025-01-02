@@ -10,12 +10,14 @@ function AlertCustom({
   description: string;
 }) {
   return (
-    <Alert className="fixed bg-red-100 justify-center space-x-3  flex flex-col  border-red-500 border-2 w-[30vw] top-3">
+    <Alert className="fixed bg-red-50 justify-center space-x-3  flex flex-col  border-red-500 border-2 w-[30vw] top-3">
       <AlertTriangle className="stroke-red-500" />
-      <AlertTitle className="font-semibold text-black text-sm">
+      <AlertTitle className="font-semibold text-red-500 text-sm">
         {title}
       </AlertTitle>
-      <AlertDescription>{description}</AlertDescription>
+      <AlertDescription className="text-red-400">
+        {description}
+      </AlertDescription>
     </Alert>
   );
 }

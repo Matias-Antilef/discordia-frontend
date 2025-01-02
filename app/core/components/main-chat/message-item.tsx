@@ -1,8 +1,4 @@
 function MessageItem() {
-  return (
-    <>
-      <h1>hola</h1>
-    </>
-  );
+  return <></>;
 }
 export default MessageItem;
