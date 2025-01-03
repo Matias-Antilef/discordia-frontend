@@ -1,10 +1,13 @@
-import { ReactNode } from "react";
-
-function MessageList({ children }: { children: ReactNode }) {
+function MessageList({ messages }: { messages: { content: string }[] }) {
   return (
-    <>
-      <div className="bg-blue-500 ">{children}</div>;
-    </>
+    <div className="flex-1 overflow-y-auto">
+      {messages.map((message, index) => (
+        <p key={index} className="text-white">
+          {message.content}
+        </p>
+      ))}
+    </div>
   );
 }
+
 export default MessageList;
