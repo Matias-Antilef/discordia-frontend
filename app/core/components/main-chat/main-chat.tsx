@@ -3,16 +3,30 @@
 import { useParams } from "next/navigation";
 import ChatHeader from "./chat-header";
 import MessageList from "./message-list";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { io, Socket } from "socket.io-client";
 
 function MainChat() {
   const { id } = useParams();
   const [messages, setMessages] = useState<{ content: string }[]>([]);
   const [message, setMessage] = useState("");
+  const [socket, setSocket] = useState<Socket | any>(undefined);
+  useEffect(() => {
+    const socket = io("http://localhost:4000");
 
+    socket.on("connect", () => {
+      console.log("Conectado al servidor");
+    });
+
+    setSocket(socket);
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   const handleNewMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(message);
+    socket.emit("sendMessage", message);
     setMessage("");
   };
 
@@ -22,8 +36,8 @@ function MainChat() {
       <div className="">
         <MessageList messages={messages} />
         <input
-          type="text"
           onKeyDown={(e) => e.key === "Enter" && handleNewMessage(e)}
+          type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
